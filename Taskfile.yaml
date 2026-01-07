@@ -1,0 +1,19 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: "Start Installing"
+    cmds:
+      - chmod +x install.sh
+      - ./install.sh
+
+  start:
+    desc: "Start App (Opens Choosing Screen)"
+    deps: [setup]
+    cmds:
+      - sudo bash main.sh
+
+  fault:
+    desc: "Detect Script Faults."
+    cmds:
+      - shellcheck main.sh lib/*.sh
