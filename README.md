@@ -1,104 +1,95 @@
-🛡️ Pardus Odak Asistanı (Pardus Focus Assistant)
+# 🛡️ Pardus Odak Asistanı (Pardus Focus Assistant)
 
-Pardus ve Debian tabanlı Linux sistemleri için geliştirilmiş; verimliliği artırmak amacıyla dikkat dağıtıcı web sitelerini engelleyen, oyunlaştırma (gamification) tabanlı ve çift arayüz destekli bir odaklanma asistanıdır.
+Pardus ve Debian tabanlı sistemler için geliştirilmiş; verimliliği artırmak amacıyla dikkat dağıtıcı web sitelerini (Instagram, YouTube vb.) geçici olarak engelleyen profesyonel bir odaklanma aracıdır.
 
-    Geliştirici: Rumeysa Ersoy
+> **Geliştirici:** Rumeysa Ersoy  
+> **Platform:** Pardus / Debian GNU/Linux  
+> **Dil:** Bash Scripting (YAD & Whiptail)
 
-    Dil: Bash Scripting (YAD & Whiptail)
+---
 
-    Özellik: GUI & TUI Desteği + Kupa Sistemi 🏆
-
-🎥 Tanıtım Videosu
-
+## 🎥 Tanıtım Videosu
 Projenin nasıl çalıştığını, kupa kazanma anını ve ses efektlerini aşağıdaki videodan izleyebilirsiniz.
 
-(Videoyu izlemek için yukarıdaki görsele tıklayın)
-🏗️ Teknik Mimari ve Dosya Yapısı
+[![Pardus Odak Asistanı Tanıtım](https://img.youtube.com/vi/jqDHAif7XJA/0.jpg)](https://www.youtube.com/watch?v=jqDHAif7XJA)
 
-Proje, modüler bir yapıda tasarlanmıştır. Her fonksiyonel birim (zamanlayıcı, arayüz, sistem mantığı) ayrı kütüphane dosyalarında tutulmuştur.
-Plaintext
+*(Videoyu izlemek için yukarıdaki görsele tıklayın)*
 
-pardus-odak-asistani/
-├── assets/              # Uygulama görselleri ve ikonlar
-├── lib/                 # Modüler script kütüphaneleri
-│   ├── gui.sh           # YAD tabanlı grafik arayüz fonksiyonları
-│   ├── tui.sh           # Whiptail tabanlı terminal arayüzü
-│   ├── focus_logic.sh   # Odaklanma döngüsü ve sayaç mantığı
-│   └── system_logic.sh  # Site engelleme ve kupa/veri yönetimi
-├── Taskfile.yaml        # Go-Task otomasyon dosyası
-├── install.sh           # Bağımlılıkları kuran script
-├── main.sh              # Projenin ana giriş noktası (Entry Point)
-├── LICENSE              # Lisans dosyası
-└── README.md            # Proje dokümantasyonu
+## 📸 Uygulama Ekran Görüntüleri
 
-📸 Kullanım ve Arayüzler
-1. Grafik Kullanıcı Arayüzü (GUI)
+### 🖥️ Başlangıç ve Mod Seçimi
+Uygulama, hem görsel (GUI) hem de performans odaklı terminal (TUI) arayüzü seçenekleriyle başlar.
 
-Modern, renkli ve fare ile kolayca kontrol edilebilen arayüz.
+![Arayüz Seçimi](assets/baslangic_ekran_secimi.png)
 
-<table> <tr> <td align="center"><b>Ana Ayar Ekranı</b></td> <td align="center"><b>Akış (Çalışma) Modu</b></td> </tr> <tr> <td><img src="assets/anaekran.png" width="400"></td> <td><img src="assets/calismamodu.png" width="400"></td> </tr> <tr> <td align="center"><i>Süre ve mola ayarlarının yapıldığı ekran.</i></td> <td align="center"><i>Odaklanma sırasındaki sayaç.</i></td> </tr> </table>
+---
 
-Erişim Engeli & Sonuç Ekranları:
+### 🎨 1. Grafik Kullanıcı Arayüzü (GUI)
+YAD kütüphanesi ile zenginleştirilmiş, kullanıcı dostu modern arayüz.
 
-<table> <tr> <td align="center"><b>⛔ Erişim Engeli</b></td> <td align="center"><b>🏆 Hedef Tamamlandı</b></td> </tr> <tr> <td><img src="assets/erisimengeli.png" width="400"></td> <td><img src="assets/hedeftamamlandi.png" width="400"></td> </tr> <tr> <td align="center"><i>Yasaklı siteye girildiğinde çıkan uyarı.</i></td> <td align="center"><i>Süre başarıyla tamamlandığında.</i></td> </tr> </table>
+| Ana Menü ve Ayarlar | Odaklanma Modu (Sayaç) |
+| :---: | :---: |
+| ![GUI Ana Ekran](assets/gui_ana_ekran.png) | ![GUI Sayaç](assets/gui_sayac.png) |
+| *Çalışma süreleri ve site engelleme ayarı.* | *Geri sayım ve motivasyon mesajları.* |
 
-<table> <tr> <td align="center"><b>⚠️ Odak Bozuldu</b></td> <td align="center"><b>☕ Mola Zamanı</b></td> </tr> <tr> <td><img src="assets/odakbozuldu.png" width="400"></td> <td><img src="assets/molazamani.png" width="400"></td> </tr> <tr> <td align="center"><i>Süre bitmeden vazgeçilirse.</i></td> <td align="center"><i>Dinlenme sayacı.</i></td> </tr> </table>
+| Mola Teklifi | Mola Sayacı |
+| :---: | :---: |
+| ![GUI Mola Sorusu](assets/gui_mola_sorusu.png) | ![GUI Mola Sayacı](assets/gui_mola_sayaci.png) |
+| *Hedef süresi dolduğunda mola onayı.* | *Dinlenme süreci takibi.* |
 
-📊 İstatistikler:
+**Performans Takibi ve Hatalar:**
+* **Çalışma Raporu:** ![GUI İstatistik](assets/gui_istatistik.png)  
+* **İptal Durumu (Odak Bozuldu):** ![Odak Bozuldu](assets/gui_odak_bozuldu.png)
+* **Engellenen Platformlar:** ![Engelleme Detayı](assets/engellenecek_platformlar.png)
 
-<div align="center"> <img src="assets/calismagecmisi.png" width="600">
+---
 
-<i>Geçmiş çalışma verileri ve kupa koleksiyonu.</i> </div>
-2. Terminal Kullanıcı Arayüzü (TUI)
+### ⌨️ 2. Terminal Kullanıcı Arayüzü (TUI)
+Hız ve verimlilik arayanlar için Whiptail ile geliştirilmiş klavye odaklı akış.
 
-Hız ve minimalizm arayanlar için klavye odaklı Whiptail arayüzü.
+| TUI Ana Menü | Yapılandırma Özet |
+| :---: | :---: |
+| ![TUI Menü](assets/tui_menu.png) | ![TUI Başlatma Onayı](assets/tui_baslatma_onayi.png) |
 
-<table> <tr> <td align="center"><b>Ana Menü</b></td> <td align="center"><b>Çalışma Süresi Ayarı</b></td> </tr> <tr> <td><img src="assets/tuianaekran.png" width="400"></td> <td><img src="assets/tuicalismazamani.png" width="400"></td> </tr> </table>
+**TUI Kullanım Adımları:**
+* **Süre Ayarları:** ![TUI Süre Girişi](assets/tui_sure_girisi.png) ![TUI Mola Girişi](assets/tui_mola_girisi.png)
+* **Odak Onayı ve Sayaç:** ![TUI Odak Sorusu](assets/tui_odak_modu_sorusu.png) ![TUI Sayaç](assets/tui_sayac.png)
+* **Mola Akışı:** ![TUI Mola Sorusu](assets/tui_mola_sorusu.png) ![TUI Mola Sayacı](assets/tui_mola_sayaci.png)
+* **Tamamlanma ve Bilgi:** ![TUI Mola Bitiş](assets/tui_mola_bitis.png) ![TUI Hakkında](assets/tui_hakkinda.png)
 
-<table> <tr> <td align="center"><b>Mola Süresi Ayarı</b></td> <td align="center"><b>Derin Odak Seçimi</b></td> </tr> <tr> <td><img src="assets/tuimolasuresi.png" width="400"></td> <td><img src="assets/tuiderinodak.png" width="400"></td> </tr> </table>
+**Detaylı Çalışma Kayıtları:**
+![TUI İstatistik](assets/tui_istatistik.png)
 
-Odaklanma ve Sonuç:
+---
 
-<table> <tr> <td align="center"><b>Odak Modu Aktif</b></td> <td align="center"><b>Tebrikler Ekranı</b></td> </tr> <tr> <td><img src="assets/tuiodakmoduaktif.png" width="400"></td> <td><img src="assets/tuitebrikler.png" width="400"></td> </tr> </table>
+## ⚙️ Kurulum ve Kullanım
 
-📈 Detaylı Rapor (Terminal):
-
-<div align="center"> <img src="assets/tuicalismaistatistik.png" width="600"> </div>
-🛠️ Kurulum ve Çalıştırma Rehberi
-
-Bu programı bilgisayarınızda çalıştırmak için aşağıdaki adımları sırasıyla uygulayın.
-1. Adım: Dosyaları Bilgisayara İndirin
-
-Önce terminali açın (Genellikle Ctrl + Alt + T tuşlarıyla açılır) ve şu komutu yapıştırıp Enter tuşuna basın:
-Bash
-
-git clone https://github.com/rumeysaersoyy/pardus-odak-asistani.git
+### 1. Depoyu Klonlayın
+```bash
+git clone [https://github.com/rumeysaersoyy/pardus-odak-asistani.git](https://github.com/rumeysaersoyy/pardus-odak-asistani.git)
 cd pardus-odak-asistani
+2. Uygulamayı Başlatın
 
-2. Adım: Programı Çalıştırın
+Uygulamayı çalıştırmak için aşağıdaki yöntemlerden birini seçebilirsiniz.
+A) Otomatik Başlatma (Task ile - Önerilen) 🚀
 
-Burada iki yöntem var. A Yöntemi en kolayıdır, eğer çalışmazsa B Yöntemini deneyin.
-A) En Kolay Yöntem (Otomatik) 🚀
-
-Terminalde şu komutu yazıp Enter'a basın. Bu komut her şeyi (kurulumu ve başlatmayı) kendi yapar.
+Tek komutla kurulum yapar ve uygulamayı başlatır:
 Bash
 
 task start
 
-B) Manuel Yöntem (Klasik)
+B) Manuel Başlatma
 
-Eğer yukarıdaki çalışmazsa, sırasıyla şu iki komutu yazıp Enter'a basın:
-
-    Önce gerekli izinleri verelim ve kurulumu yapalım:
-
+Eğer sisteminizde task yüklü değilse:
 Bash
 
-chmod +x install.sh main.sh lib/*.sh && ./install.sh
+# 1. Gerekli izinleri verin
+chmod +x install.sh main.sh lib/*.sh
 
-    Şimdi programı başlatalım:
+# 2. Kurulumu yapın
+./install.sh
 
-Bash
-
+# 3. Uygulamayı başlatın
 sudo ./main.sh
 
-    ❓ Neden Şifre Soruyor? > Uygulama, "Instagram, YouTube" gibi siteleri engelleyebilmek için bilgisayarın sistem ayarlarına (/etc/hosts) müdahale eder. Bu yüzden çalıştırırken Pardus giriş şifrenizi ister. Şifrenizi yazarken ekranda yıldız (*) çıkmaz, siz yazıp Enter'a basın.
+    ⚠️ Önemli Not: Uygulama, site engelleme özelliği için /etc/hosts dosyasına müdahale eder. Bu nedenle çalıştırırken yönetici şifrenizi (sudo) girmeniz gerekmektedir.
