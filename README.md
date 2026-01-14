@@ -17,12 +17,6 @@ Projenin nasıl çalıştığını, kupa kazanma anını ve ses efektlerini aşa
 *(Videoyu izlemek için yukarıdaki görsele tıklayın)*
 
 ## 📸 Uygulama Ekran Görüntüleri
-
-### 🖥️ Başlangıç ve Mod Seçimi
-Uygulama, hem görsel (GUI) hem de performans odaklı terminal (TUI) arayüzü seçenekleriyle başlar.
-
-![Arayüz Seçimi](assets/baslangic_ekran_secimi.png)
-
 ---
 
 ## 📸 Uygulama Ekran Görüntüleri
