@@ -25,42 +25,55 @@ Uygulama, hem görsel (GUI) hem de performans odaklı terminal (TUI) arayüzü s
 
 ---
 
+## 📸 Uygulama Ekran Görüntüleri
+
 ### 🎨 1. Grafik Kullanıcı Arayüzü (GUI)
 YAD kütüphanesi ile zenginleştirilmiş, kullanıcı dostu modern arayüz.
 
-| Ana Menü ve Ayarlar | Odaklanma Modu (Sayaç) |
+| Ana Ayar Ekranı | Akış (Çalışma) Modu |
 | :---: | :---: |
-| ![GUI Ana Ekran](assets/gui_ana_ekran.png) | ![GUI Sayaç](assets/gui_sayac.png) |
-| *Çalışma süreleri ve site engelleme ayarı.* | *Geri sayım ve motivasyon mesajları.* |
+| ![Ana Ekran](assets/anaekran.png) | ![Çalışma Modu](assets/calismamodu.png) |
+| *Süre ve mola ayarlarının yapıldığı ekran.* | *Odaklanma sırasındaki sayaç.* |
 
-| Mola Teklifi | Mola Sayacı |
+**Erişim Engeli & Sonuç Ekranları:**
+
+| ⛔ Erişim Engeli | 🏆 Hedef Tamamlandı |
 | :---: | :---: |
-| ![GUI Mola Sorusu](assets/gui_mola_sorusu.png) | ![GUI Mola Sayacı](assets/gui_mola_sayaci.png) |
-| *Hedef süresi dolduğunda mola onayı.* | *Dinlenme süreci takibi.* |
+| ![Erişim Engeli](assets/erisimengeli.png) | ![Hedef Tamamlandı](assets/hedeftamamlandi.png) |
+| *Yasaklı siteye girildiğinde çıkan uyarı.* | *Süre başarıyla tamamlandığında.* |
 
-**Performans Takibi ve Hatalar:**
-* **Çalışma Raporu:** ![GUI İstatistik](assets/gui_istatistik.png)  
-* **İptal Durumu (Odak Bozuldu):** ![Odak Bozuldu](assets/gui_odak_bozuldu.png)
-* **Engellenen Platformlar:** ![Engelleme Detayı](assets/engellenecek_platformlar.png)
+| ⚠️ Odak Bozuldu | ☕ Mola Zamanı |
+| :---: | :---: |
+| ![Odak Bozuldu](assets/odakbozuldu.png) | ![Mola Zamanı](assets/molazamani.png) |
+| *Süre bitmeden vazgeçilirse.* | *Dinlenme sayacı.* |
+
+**📊 İstatistikler:**
+
+![İstatistikler](assets/calismagecmisi.png)
+*Geçmiş çalışma verileri ve kupa koleksiyonu.*
 
 ---
 
 ### ⌨️ 2. Terminal Kullanıcı Arayüzü (TUI)
 Hız ve verimlilik arayanlar için Whiptail ile geliştirilmiş klavye odaklı akış.
 
-| TUI Ana Menü | Yapılandırma Özet |
+| TUI Ana Menü | Çalışma Süresi Ayarı |
 | :---: | :---: |
-| ![TUI Menü](assets/tui_menu.png) | ![TUI Başlatma Onayı](assets/tui_baslatma_onayi.png) |
+| ![TUI Ana Ekran](assets/tuianaekran.png) | ![TUI Çalışma](assets/tuicalismazamani.png) |
 
-**TUI Kullanım Adımları:**
-* **Süre Ayarları:** ![TUI Süre Girişi](assets/tui_sure_girisi.png) ![TUI Mola Girişi](assets/tui_mola_girisi.png)
-* **Odak Onayı ve Sayaç:** ![TUI Odak Sorusu](assets/tui_odak_modu_sorusu.png) ![TUI Sayaç](assets/tui_sayac.png)
-* **Mola Akışı:** ![TUI Mola Sorusu](assets/tui_mola_sorusu.png) ![TUI Mola Sayacı](assets/tui_mola_sayaci.png)
-* **Tamamlanma ve Bilgi:** ![TUI Mola Bitiş](assets/tui_mola_bitis.png) ![TUI Hakkında](assets/tui_hakkinda.png)
+| Mola Süresi Ayarı | Derin Odak Seçimi |
+| :---: | :---: |
+| ![TUI Mola](assets/tuimolasuresi.png) | ![TUI Derin Odak](assets/tuiderinodak.png) |
 
-**Detaylı Çalışma Kayıtları:**
-![TUI İstatistik](assets/tui_istatistik.png)
+**Odaklanma ve Sonuç:**
 
+| Odak Modu Aktif | Tebrikler Ekranı |
+| :---: | :---: |
+| ![TUI Odak](assets/tuiodakmoduaktif.png) | ![TUI Tebrikler](assets/tuitebrikler.png) |
+
+**📈 Detaylı Rapor (Terminal):**
+
+![TUI İstatistik](assets/tuicalismaistatistik.png)
 ---
 
 ## ⚙️ Kurulum ve Kullanım
