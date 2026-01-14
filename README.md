@@ -1,3 +1,4 @@
+
 # 🛡️ Pardus Odak Asistanı (Pardus Focus Assistant)
 
 Pardus ve Debian tabanlı sistemler için geliştirilmiş; verimliliği artırmak amacıyla dikkat dağıtıcı web sitelerini (Instagram, YouTube vb.) geçici olarak engelleyen profesyonel bir odaklanma aracıdır.
@@ -64,25 +65,27 @@ Hız ve verimlilik arayanlar için Whiptail ile geliştirilmiş klavye odaklı a
 
 ## ⚙️ Kurulum ve Kullanım
 
-### 1. Depoyu Klonlayın
+## 1. Depoyu Klonlayın
 ```bash
-git clone [https://github.com/rumeysaersoyy/pardus-odak-asistani.git](https://github.com/rumeysaersoyy/pardus-odak-asistani.git)
+git clone https://github.com/rumeysaersoyy/pardus-odak-asistani.git
 cd pardus-odak-asistani
-2. Uygulamayı Başlatın
+```
+## 2. Uygulamayı Başlatın
 
 Uygulamayı çalıştırmak için aşağıdaki yöntemlerden birini seçebilirsiniz.
-A) Otomatik Başlatma (Task ile - Önerilen) 🚀
+
+### A) Otomatik Başlatma (Task ile - Önerilen) 🚀
 
 Tek komutla kurulum yapar ve uygulamayı başlatır:
-Bash
-
+```bash
 task start
+```
 
-B) Manuel Başlatma
+### B) Manuel Başlatma
 
 Eğer sisteminizde task yüklü değilse:
-Bash
 
+```bash
 # 1. Gerekli izinleri verin
 chmod +x install.sh main.sh lib/*.sh
 
@@ -91,5 +94,7 @@ chmod +x install.sh main.sh lib/*.sh
 
 # 3. Uygulamayı başlatın
 sudo ./main.sh
+
+```
 
     ⚠️ Önemli Not: Uygulama, site engelleme özelliği için /etc/hosts dosyasına müdahale eder. Bu nedenle çalıştırırken yönetici şifrenizi (sudo) girmeniz gerekmektedir.
