@@ -1,109 +1,104 @@
-# 🛡️ Pardus Odak Asistanı (Pardus Focus Assistant)
+🛡️ Pardus Odak Asistanı (Pardus Focus Assistant)
 
-Pardus ve Debian tabanlı Linux sistemleri için geliştirilmiş; verimliliği artırmak amacıyla dikkat dağıtıcı web sitelerini engelleyen, **oyunlaştırma (gamification)** tabanlı ve çift arayüz destekli bir odaklanma asistanıdır.
+Pardus ve Debian tabanlı Linux sistemleri için geliştirilmiş; verimliliği artırmak amacıyla dikkat dağıtıcı web sitelerini engelleyen, oyunlaştırma (gamification) tabanlı ve çift arayüz destekli bir odaklanma asistanıdır.
 
-> **Geliştirici:** Rumeysa Ersoy  
-> **Dil:** Bash Scripting (YAD & Whiptail)  
-> **Özellik:** GUI & TUI Desteği + Kupa Sistemi 🏆
+    Geliştirici: Rumeysa Ersoy
 
----
+    Dil: Bash Scripting (YAD & Whiptail)
 
-## 📸 1. Grafik Kullanıcı Arayüzü (GUI)
-Modern, renkli ve fare odaklı kullanım sunan arayüz.
+    Özellik: GUI & TUI Desteği + Kupa Sistemi 🏆
 
-### 🖥️ Kurulum ve Başlangıç
-Uygulama açıldığında çalışma sürenizi, mola sürenizi belirleyebilir ve "Derin Odak" modunu aktif edebilirsiniz.
-![Ana Ekran](assets/anaekran.png)
+🎥 Tanıtım Videosu
 
-### ⏳ Akış Modu (Çalışma Zamanı)
-Başlat butonuna bastığınızda geri sayım başlar. Motivasyonel mesajlarla odaklanmanıza yardımcı olur.
-![Çalışma Modu](assets/calismamodu.png)
+Projenin nasıl çalıştığını, kupa kazanma anını ve ses efektlerini aşağıdaki videodan izleyebilirsiniz.
 
-### ⛔ Erişim Engeli
-Eğer "Derin Odak" modunu seçtiyseniz, çalışma süresi boyunca dikkat dağıtıcı sitelere (Instagram, YouTube vb.) erişim işletim sistemi seviyesinde kesilir.
-![Erişim Engeli](assets/erisimengeli.png)
+(Videoyu izlemek için yukarıdaki görsele tıklayın)
+🏗️ Teknik Mimari ve Dosya Yapısı
 
-### 🎉 Hedef Tamamlandı (Başarı!)
-Süreyi sonuna kadar tamamladığınızda sistem sizi tebrik eder ve hanenize **+1 Kupa (🏆)** ekler.
-![Hedef Tamamlandı](assets/hedeftamamlandi.png)
+Proje, modüler bir yapıda tasarlanmıştır. Her fonksiyonel birim (zamanlayıcı, arayüz, sistem mantığı) ayrı kütüphane dosyalarında tutulmuştur.
+Plaintext
 
-### ☕ Mola Zamanı
-Başarılı bir çalışmanın ardından hak ettiğiniz dinlenme süresi başlar. Yeşil tema ile gözlerinizi dinlendirir.
-![Mola Zamanı](assets/molazamani.png)
+pardus-odak-asistani/
+├── assets/              # Uygulama görselleri ve ikonlar
+├── lib/                 # Modüler script kütüphaneleri
+│   ├── gui.sh           # YAD tabanlı grafik arayüz fonksiyonları
+│   ├── tui.sh           # Whiptail tabanlı terminal arayüzü
+│   ├── focus_logic.sh   # Odaklanma döngüsü ve sayaç mantığı
+│   └── system_logic.sh  # Site engelleme ve kupa/veri yönetimi
+├── Taskfile.yaml        # Go-Task otomasyon dosyası
+├── install.sh           # Bağımlılıkları kuran script
+├── main.sh              # Projenin ana giriş noktası (Entry Point)
+├── LICENSE              # Lisans dosyası
+└── README.md            # Proje dokümantasyonu
 
-### ⚠️ Odak Bozuldu (Yarım Bırakma)
-Eğer süre dolmadan "Vazgeç" butonuna basarsanız veya programı kapatırsanız:
-* Çalıştığınız süre istatistiklere **eklenir.**
-* Ancak **KUPA KAZANAMAZSINIZ.** (Seri bozulur)
-![Odak Bozuldu](assets/odakbozuldu.png)
+📸 Kullanım ve Arayüzler
+1. Grafik Kullanıcı Arayüzü (GUI)
 
-### 📊 İstatistik ve Kupa Koleksiyonu
-Tüm çalışmalarınız ve kazandığınız kupalar burada sergilenir. Bilgisayarı kapatsanız bile verileriniz silinmez.
-![Çalışma Geçmişi](assets/calismagecmisi.png)
+Modern, renkli ve fare ile kolayca kontrol edilebilen arayüz.
 
----
+<table> <tr> <td align="center"><b>Ana Ayar Ekranı</b></td> <td align="center"><b>Akış (Çalışma) Modu</b></td> </tr> <tr> <td><img src="assets/anaekran.png" width="400"></td> <td><img src="assets/calismamodu.png" width="400"></td> </tr> <tr> <td align="center"><i>Süre ve mola ayarlarının yapıldığı ekran.</i></td> <td align="center"><i>Odaklanma sırasındaki sayaç.</i></td> </tr> </table>
 
-## ⌨️ 2. Terminal Kullanıcı Arayüzü (TUI)
-Hız ve minimalizm arayanlar için klavye odaklı arayüz.
+Erişim Engeli & Sonuç Ekranları:
 
-### ⚙️ Ana Menü ve Ayarlar
-Terminalden çıkmadan tüm işlemleri yönetebilirsiniz.
-![TUI Ana Ekran](assets/tuianaekran.png)
+<table> <tr> <td align="center"><b>⛔ Erişim Engeli</b></td> <td align="center"><b>🏆 Hedef Tamamlandı</b></td> </tr> <tr> <td><img src="assets/erisimengeli.png" width="400"></td> <td><img src="assets/hedeftamamlandi.png" width="400"></td> </tr> <tr> <td align="center"><i>Yasaklı siteye girildiğinde çıkan uyarı.</i></td> <td align="center"><i>Süre başarıyla tamamlandığında.</i></td> </tr> </table>
 
-### ⏱️ Süre Ayarları
-Çalışma sürenizi ve mola sürenizi adım adım girersiniz.
-| Çalışma Süresi | Mola Süresi |
-| :---: | :---: |
-| ![Çalışma Süresi](assets/tuicalismazamani.png) | ![Mola Süresi](assets/tuimolasuresi.png) |
+<table> <tr> <td align="center"><b>⚠️ Odak Bozuldu</b></td> <td align="center"><b>☕ Mola Zamanı</b></td> </tr> <tr> <td><img src="assets/odakbozuldu.png" width="400"></td> <td><img src="assets/molazamani.png" width="400"></td> </tr> <tr> <td align="center"><i>Süre bitmeden vazgeçilirse.</i></td> <td align="center"><i>Dinlenme sayacı.</i></td> </tr> </table>
 
-### 🛡️ Derin Odak Tercihi
-Sitenin engellenip engellenmeyeceğini klavyeden seçersiniz.
-![Derin Odak](assets/tuiderinodak.png)
+📊 İstatistikler:
 
-### 🚀 Odaklanma Modu (Akış)
-Sade, dikkat dağıtmayan bir ilerleme çubuğu ile odaklanma süreci başlar.
-![TUI Odak Modu](assets/tuiodakmoduaktif.png)
+<div align="center"> <img src="assets/calismagecmisi.png" width="600">
 
-### 🏆 Tebrikler (Başarı Anı)
-Süre bittiğinde terminal üzerinden başarınız kutlanır ve koleksiyonunuza yeni kupanız eklenir.
-![TUI Tebrikler](assets/tuitebrikler.png)
+<i>Geçmiş çalışma verileri ve kupa koleksiyonu.</i> </div>
+2. Terminal Kullanıcı Arayüzü (TUI)
 
-### 📈 Detaylı Rapor
-Terminal ekranında bile kupa sayınızı, toplam dakikanızı ve hangi seansların "BAŞARILI" hangilerinin "YARIM" kaldığını detaylıca görebilirsiniz.
-![TUI İstatistik](assets/tuicalismaistatistik.png)
+Hız ve minimalizm arayanlar için klavye odaklı Whiptail arayüzü.
 
----
+<table> <tr> <td align="center"><b>Ana Menü</b></td> <td align="center"><b>Çalışma Süresi Ayarı</b></td> </tr> <tr> <td><img src="assets/tuianaekran.png" width="400"></td> <td><img src="assets/tuicalismazamani.png" width="400"></td> </tr> </table>
 
-## 🛠️ Kurulum ve Çalıştırma
+<table> <tr> <td align="center"><b>Mola Süresi Ayarı</b></td> <td align="center"><b>Derin Odak Seçimi</b></td> </tr> <tr> <td><img src="assets/tuimolasuresi.png" width="400"></td> <td><img src="assets/tuiderinodak.png" width="400"></td> </tr> </table>
 
-Projeyi bilgisayarınıza indirmek ve sorunsuz çalıştırmak için aşağıdaki adımları izleyebilirsiniz.
+Odaklanma ve Sonuç:
 
-### 1. Adım: Projeyi İndirin
-Öncelikle terminali açın ve proje dosyalarını GitHub'dan çekin:
+<table> <tr> <td align="center"><b>Odak Modu Aktif</b></td> <td align="center"><b>Tebrikler Ekranı</b></td> </tr> <tr> <td><img src="assets/tuiodakmoduaktif.png" width="400"></td> <td><img src="assets/tuitebrikler.png" width="400"></td> </tr> </table>
 
-```bash
-git clone [https://github.com/rumeysaersoyy/pardus-odak-asistani.git](https://github.com/rumeysaersoyy/pardus-odak-asistani.git)
+📈 Detaylı Rapor (Terminal):
+
+<div align="center"> <img src="assets/tuicalismaistatistik.png" width="600"> </div>
+🛠️ Kurulum ve Çalıştırma Rehberi
+
+Bu programı bilgisayarınızda çalıştırmak için aşağıdaki adımları sırasıyla uygulayın.
+1. Adım: Dosyaları Bilgisayara İndirin
+
+Önce terminali açın (Genellikle Ctrl + Alt + T tuşlarıyla açılır) ve şu komutu yapıştırıp Enter tuşuna basın:
+Bash
+
+git clone https://github.com/rumeysaersoyy/pardus-odak-asistani.git
 cd pardus-odak-asistani
 
-### 2. Adım: Çalıştırma Yöntemi Seçin
-A) Otomatik Başlatma (Önerilen 🚀)
+2. Adım: Programı Çalıştırın
 
-Projede Task (Go-Task) otomasyonu bulunmaktadır. Tek bir komutla hem gerekli paketlerin (yad, whiptail) kurulumunu yapar hem de uygulamayı başlatır.
+Burada iki yöntem var. A Yöntemi en kolayıdır, eğer çalışmazsa B Yöntemini deneyin.
+A) En Kolay Yöntem (Otomatik) 🚀
 
-```bash
+Terminalde şu komutu yazıp Enter'a basın. Bu komut her şeyi (kurulumu ve başlatmayı) kendi yapar.
+Bash
+
 task start
 
-B) Manuel Başlatma
+B) Manuel Yöntem (Klasik)
 
-Eğer task kullanmak istemiyorsanız, klasik yöntemle sırasıyla şu komutları uygulayın:
+Eğer yukarıdaki çalışmazsa, sırasıyla şu iki komutu yazıp Enter'a basın:
 
-```bash
-# 1. İzinleri verin ve kurulumu yapın
-chmod +x install.sh main.sh lib/*.sh
-./install.sh
-w
-# 2. Uygulamayı başlatın
+    Önce gerekli izinleri verelim ve kurulumu yapalım:
+
+Bash
+
+chmod +x install.sh main.sh lib/*.sh && ./install.sh
+
+    Şimdi programı başlatalım:
+
+Bash
+
 sudo ./main.sh
 
-
-
+    ❓ Neden Şifre Soruyor? > Uygulama, "Instagram, YouTube" gibi siteleri engelleyebilmek için bilgisayarın sistem ayarlarına (/etc/hosts) müdahale eder. Bu yüzden çalıştırırken Pardus giriş şifrenizi ister. Şifrenizi yazarken ekranda yıldız (*) çıkmaz, siz yazıp Enter'a basın.
