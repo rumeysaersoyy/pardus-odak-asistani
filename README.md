@@ -14,9 +14,7 @@ Projenin nasıl çalıştığını, kupa kazanma anını ve ses efektlerini aşa
 
 [![Pardus Odak Asistanı Tanıtım](https://img.youtube.com/vi/jqDHAif7XJA/0.jpg)](https://www.youtube.com/watch?v=jqDHAif7XJA)
 
-*(Videoyu izlemek için yukarıdaki görsele tıklayın)*
-
-## 📸 Uygulama Ekran Görüntüleri
+*(Videoyu izlemek için yukarıdaki görsele tıklayın
 ---
 
 ## 📸 Uygulama Ekran Görüntüleri
